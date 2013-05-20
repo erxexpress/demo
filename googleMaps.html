@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html”>
+ <html lang=”en”>
+ <script src=”http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAb1-yVRUxj8bLRBubMOJe3hR2Xbuv9FdKXpyzebx2e1BqiHDJPxReF1a5VJ7TskrLtbLjJQOTXglDjA” type=”text/javascript”></script>
+ <script type=”text/javascript”>
+function initialize() {
+ if (GBrowserIsCompatible()) {
+ var map = new GMap2(document.getElementById(“map_canvas”));
+var center = new GLatLng(41.278487, -96.149816);
+ map.setCenter(center, 13);
+ var marker = new GMarker(center, {draggable: false});
+ GEvent.addListener(marker, “click”, function() {
+ map.closeInfoWindow();
+ })
+ GEvent.addListener(marker, “click”, function() {
+ marker.openInfoWindowHtml(“99 Dollar Webmaster”);
+ });
+map.addOverlay(marker);
+ var baseIcon = new GIcon(G_DEFAULT_ICON);
+ baseIcon.shadow = “http://www.google.com/mapfiles/shadow50.png”;
+map.setUIToDefault();
+ }
+ }
+ </script>
+ <body onload=”initialize()” onunload=”GUnload()”>
+ <div id="”map_canvas”" style=”width: 500px; height: 450px”></div>
+ </body>
+ </html>
