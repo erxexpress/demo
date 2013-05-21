@@ -228,22 +228,7 @@
 
              <div style="margin-bottom:15px;">
              </div>
-<!--
-             <ol id="selectDrug" style="text-align:right; margin-bottom:15px;">
-                  <li class="ui-widget-content">
-                      <span class="listItemFirstRow">AMOXYCILLIN CAP 250mg</span><br /> 
-                      <span class="listItemSecondRow">20 Capsules</span>
-                          </li>
-                  <li class="ui-widget-content">
-                      <span class="listItemFirstRow">LIPITOR TAB 10 mg</span><br />
-                      <span class="listItemSecondRow">30 Tablets</span>
-                  </li>
-                   <li class="ui-widget-content">
-                      <span class="listItemFirstRow">INDOCID CAP 25 mg</span><br />
-                      <span class="listItemSecondRow">200 Capsules, 2 Repeats left</span>
-                  </li>
-                </ol>
--->         
+         
               <input type="button" id="selDrugOk" class="okButton" value="Continue" />
               <input type="button" id="selDrugCancel" class="cancelButton" value="Back" />
 
@@ -261,20 +246,30 @@
                   </span>
                
              </div>
-              
-                 <ol id="selectPharmacy" style="text-align:right; margin:15px;">
 
-                     <li class="ui-widget-content">
-                      <span class="listItemFirstRow">Amcal Pharmacy</span><br />
-                      <span class="listItemSecondRow">320-380 Epsom Rd, Ascot Value<br />
-                          </span>
-                  </li>
 
-                  <li class="ui-widget-content">
-                      <span class="listItemFirstRow">Ascot Vale Pharmacy</span><br /> 
-                      <span class="listItemSecondRow">189 Union Rd, Ascot Vale<br /> 
-                          </span>
-                  </li>
+             <button class="listButton" id="selPhmcy1">
+                    <div><span class="listSymbol" id="selPhmcyVal1">&nbsp;</span></div>
+                    <div class="listText">Amcal Pharmacy<br/>
+                    <span class="listItemSecondRow">320-380 Epsom Rd, Ascot Value</span></div>
+             </button>
+
+             <button class="listButton" id="selPhmcy2">
+                    <div><span class="listSymbol" id="selPhmcyVal2">.</span></div>
+                    <div class="listText">Ascot Vale Pharmacy<br/>
+                    <span class="listItemSecondRow">189 Union Rd, Ascot Vale</span></div>
+             </button>
+
+             <button class="listButton" id="selPhmcyOther">
+                    <div><span class="listSymbol" id="selPhmcyOtherVal">&nbsp;</span></div>
+                    <div class="listText">Other Pharmacy<br/>
+                    <span class="listItemSecondRow">Search for another pharmacy...</span></div>
+             </button>
+
+             <div style="margin-bottom:15px;">
+             </div>
+         
+
 <!--                  
                    <li class="ui-widget-content">
                       <span class="listItemFirstRow">National Pharmacies</span><br />
@@ -288,14 +283,6 @@
                       </span>
                   </li>
 -->
-                    <li class="ui-widget-content" id="otherPharmacy" style="margin:top:25px;">
-                      <span class="listItemFirstRow">Other Pharmacy</span><br />
-                      <span class="listItemSecondRow">Search for another pharmacy...<br />
-                          </span>
-                  </li>
-
-                </ol>
-              
              <input type="button" id="selPharmacyOk" class="okButton" value="Continue" />
              <input type="button" id="selPharmacyCancel" class="cancelButton" value="Back" />
          </div>
@@ -326,7 +313,7 @@
              </textarea>
               
               <br />
-              <input type="button" id="requestOk" class="okButton" value="Send Request" />
+              <input type="button" id="requestOk" class="okButton" value="Send Request" style="width:150px;"/>
               <input type="button" id="requestCancel" class="cancelButton" value="Back" />
          </div>
 
@@ -350,7 +337,7 @@
                      -->
                      </span>
              </div>
-              <input type="button" id="aboutClose" class="okButton" value="Close" />
+              <input type="button" id="aboutClose" class="okButton" value="Back" />
               
          </div>
 
@@ -361,13 +348,21 @@
          
              <span class="pageTitle">Settings</span>
 
+             <button class="listButton" id="Button2" style="height:70px;">
+                    <div><span class="listSymbol" id="Span1">&nbsp;</span></div>
+                    <div class="listText"><b>Preferred Pharmacy</b><br/>
+                    <span class="listItemSecondRow" style="font-size:10pt;height:30px;">Ascot Vale Pharmacy<br />189 Union Rd</span></div>
+             </button>
+
+
+
                 <div style="width:95%; margin: 0 auto; margin-bottom:15px;"> 
-                  <span class="pageText" style="font-size:10pt;">
-                     Placeholder only
-                     </span>
-             </div>
+                  
+                
+
+                </div>
              <br />
-             <input type="button" id="settingsClose" class="okButton" value="Close" />
+             <input type="button" id="settingsClose" class="okButton" value="Back" />
               
          </div>
 
@@ -392,8 +387,8 @@
               </span>
 
 
-              <input type="button" id="completedShowMap" class="okButton" value="ShowMap" />
-              <input type="button" id="completedAddCalender" class="okButton" value="Add To Calendar" />
+              <input style="width:200px; margin-bottom:15px;" type="button" id="completedShowMap" class="okButton" value="ShowMap" />
+              <input style="width:200px;" type="button" id="completedAddCalender" class="okButton" value="Add To Calendar" />
               
 <!--              
               <div style="vertical-align: top; margin:2px;">
@@ -425,7 +420,7 @@
 
               <div style="vertical-align: top; margin:2px;">
                         <iframe id="pharmacyMap" style="margin:0;color:black;text-align:right; width:95%;" height="270" scrolling="no" 
-                         src="">                                                                                                  
+                         src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">
                         </iframe>
 <!--
 src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                                                                  
@@ -512,6 +507,7 @@ src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&am
         //ScannedSCID
         $("#scanCode").click(function (event) {
             ScanCode();
+            showpa("pagePharmacy");
             // showPage("pageMap");
         });
 
