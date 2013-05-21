@@ -1,4 +1,4 @@
-/*
+﻿/*
     <html>
 	<head>
 		<style>
@@ -267,7 +267,7 @@ body {
     border-top: 0px solid #444;
     background-color:#0268B2;
     color:white;
-    height:70px;
+    height:58px;
 }
 
 
@@ -275,12 +275,8 @@ body {
 .optionButton {
      border:0px solid #444;
      font-family: Symbols;
-     height:inherit;
-<<<<<<< HEAD
-     width:80px;
-=======
-     width:70px;
->>>>>>> buttons
+     width:90%;
+     height:100%;
      margin:3px;
      padding:3px;
      text-align:center;
@@ -288,13 +284,14 @@ body {
      font-weight:normal;
      color:white;
      background-color:transparent;
+     /* background-color:green; */
      font-size:24px;
      cursor: pointer;
 }
 
 .optionArea {
      border:0px solid #444;
-     width:80px;
+     width:70px;
      margin:0px;
      padding:0px;
      text-align:center;
@@ -302,37 +299,10 @@ body {
      font-weight:normal;
      color:white;
      background-color:transparent;
+     /* background-color:red; */
      font-size:10px;
      cursor: pointer;
 }
-
-
-
-.newScriptButton {
-    /* border:1px solid #152562; */
-     height:62px;
-     width:80px;
-     margin:0px;
-     padding:0px;
-     text-align:center;
-     vertical-align:bottom;
-     font-weight:normal;
-     color:white;
-     background-color:transparent;
-     font-size:8pt;
-     
-    background-image: url(images/add.png); /* 16px x 16px */
-    background-color: transparent; 
-    background-repeat: no-repeat;  
-    background-position: 0px 0px;  
-    
-    border: none;           
-    
-    cursor: pointer;
-    padding-left: 2px;     
-}
-
-
 
 
 .eRxBlue
@@ -584,6 +554,9 @@ body {
    -moz-border-radius: 5px;
     border-radius: 5px;
 }
+
+
+
 
 .listButton 
 {

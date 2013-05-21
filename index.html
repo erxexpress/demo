@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
    <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -8,7 +8,6 @@
      
      <link rel="stylesheet" href="main.css" type="text/css" />
      <link rel="stylesheet" href="jquery-ui.css" />
-<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
 
       <script type="text/javascript" src="jquery.min.js"></script>
       <script type="text/javascript" src="jquery-ui.min.js"></script>
@@ -107,10 +106,7 @@
     <!-- ------------------------------------------------- -->
     <!-- Mesagebox -->
     <!-- ------------------------------------------------- -->
-<<<<<<< HEAD
-=======
  <!--
->>>>>>> buttons
     <div class="popUpArea" id="pageMessagebox" style=""> 
 
         <div class="dialogWindow" id="dialogMessagebox">
@@ -123,11 +119,7 @@
         </div>
 
     </div>
-<<<<<<< HEAD
- 
-=======
  -->
->>>>>>> buttons
 
 
     <!-- ------------------------------------------------- -->
@@ -198,23 +190,7 @@
                </div>
 
                <br />
-
                
-               <button class="listButton" id="selDrug1">
-                    <div><span class="listSymbol" id="selDrugVal1">.</span></div>
-                    <div class="listText">Some really long <br/><span class="listItemSecondRow">Next line </span></div>
-               </button>
-               <!--
-               <div style="margin-left:10%; width:80%; border:1px solid red; background-color:Silver;">
-               <br /><br />
-                    <a href="#" id="btn1" class="css-button">
-                    <div style="font-family: Symbols; font-size:20pt;"> 
-                    .
-                    </div>
-                    /a>
-                </div>
-                -->
-
           </div>
 
 
@@ -227,14 +203,32 @@
 
              <div style="width:90%; margin:0 auto; margin-bottom:20px;"> 
                   <span class="pageText" style="font-weight:bold; margin-bottom:30px;">
-                     Prescription for Peter Jones <br /><br />
-                  </span>
-                  <span class="pageText">
-                     Please select the drugs from your script that you would like to order from a pharmacy.
+                     Prescription for Peter Jones &nbsp;
+                     <!--
+                     <input style="" type="button" id="scriptDetails" class="okButton" value="Show Details" />
+                        -->                     
+                   </span>
+                   <br />
+
+                  <span class="pageText" style="margin-top:20px;">
+                     Please select the drugs script that you would like to request from a pharmacy.
                   </span>
                <br />
              </div>
 
+             <button class="listButton" id="selDrug1">
+                    <div><span class="listSymbol" id="selDrugVal1">.</span></div>
+                    <div class="listText">AMOXYCILLIN CAP 250mg<br/><span class="listItemSecondRow">20 Capsules</span></div>
+             </button>
+
+             <button class="listButton" id="selDrug2">
+                    <div><span class="listSymbol" id="selDrugVal2">.</span></div>
+                    <div class="listText">LIPITOR TAB 10 mg<br/><span class="listItemSecondRow">30 Tablets</span></div>
+             </button>
+
+             <div style="margin-bottom:15px;">
+             </div>
+<!--
              <ol id="selectDrug" style="text-align:right; margin-bottom:15px;">
                   <li class="ui-widget-content">
                       <span class="listItemFirstRow">AMOXYCILLIN CAP 250mg</span><br /> 
@@ -244,14 +238,12 @@
                       <span class="listItemFirstRow">LIPITOR TAB 10 mg</span><br />
                       <span class="listItemSecondRow">30 Tablets</span>
                   </li>
-                  <!--
                    <li class="ui-widget-content">
                       <span class="listItemFirstRow">INDOCID CAP 25 mg</span><br />
                       <span class="listItemSecondRow">200 Capsules, 2 Repeats left</span>
                   </li>
-                  -->
                 </ol>
-         
+-->         
               <input type="button" id="selDrugOk" class="okButton" value="Continue" />
               <input type="button" id="selDrugCancel" class="cancelButton" value="Back" />
 
@@ -347,13 +339,15 @@
              <span class="pageTitle">About</span>
 
                 <div style="width:95%; margin: 0 auto; margin-bottom:15px; text-align:left;"> 
-                  <span class="pageText" style="font-size:9pt;">
-                     This is prototype for a platform-independent mobile phone application to provide functionality around eRx Express.
+                  <span class="pageText" style="font-size:10pt;">
+                     This is a prototype for a platform-independent mobile phone application to provide functionality around eRx Express.
                      Transactions with web services are currently only simulated.<br />
                      <br />
-                     The application was written using HTML5 which is the compiled into packages for all mobile phone platforms (Windows, Android, Apple, Blackberry etc.) using Adobe PhoneGap.
+                     The application was written using HTML5 which can be embedded in packages for all mobile phone platforms (Windows, Android, Apple, Blackberry etc.) using Adobe PhoneGap.
+                     <!--
                      <br /><br />
                      For more information please contact Gerold Martens at FRED.
+                     -->
                      </span>
              </div>
               <input type="button" id="aboutClose" class="okButton" value="Close" />
@@ -431,11 +425,7 @@
 
               <div style="vertical-align: top; margin:2px;">
                         <iframe id="pharmacyMap" style="margin:0;color:black;text-align:right; width:95%;" height="270" scrolling="no" 
-<<<<<<< HEAD
-                         src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                                                                  
-=======
                          src="">                                                                                                  
->>>>>>> buttons
                         </iframe>
 <!--
 src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                                                                  
@@ -523,20 +513,23 @@ src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&am
         $("#scanCode").click(function (event) {
             ScanCode();
             // showPage("pageMap");
-<<<<<<< HEAD
-=======
         });
+
+        function changeSelection(id) {
+            if ($('#' + id).text() == ".")
+                $('#' + id).html("&nbsp;");
+            else
+                $('#' + id).text(".");
+        };
 
 
         $("#selDrug1").click(function (event) {
-            // alert($('#selDrugVal1').text());
+            changeSelection('selDrugVal1');
+        });        
+        
 
-            if ($('#selDrugVal1').text() == ".")
-                $('#selDrugVal1').html("&nbsp;");
-            else
-                $('#selDrugVal1').text(".");
-
->>>>>>> buttons
+        $("#selDrug2").click(function (event) {
+            changeSelection('selDrugVal2');
         });
 
         $("#getScriptId").click(function (event) {
