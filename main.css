@@ -561,6 +561,7 @@ body {
 .listButton 
 {
    text-align:left; 
+   margin-bottom:5px;
    width:200px;
    width:90%;
    padding-left:10px;
