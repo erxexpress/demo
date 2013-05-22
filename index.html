@@ -169,6 +169,13 @@
              <span class="pageTitleText" style="font-size:16pt;">
                  Welcome!
              </span>
+<!--
+               <script type="text/javascript">
+                   
+                   alert($("#selPhmcy1Name").get().innerHTML);
+                   alert($('#selPhmcy1Name').text());
+               </script>
+               -->
              
              <div style="width:70%; margin-left:auto; margin-right:auto; padding-top:30px;">
              <!--
@@ -250,8 +257,8 @@
 
              <button class="listButton" id="selPhmcy1">
                     <div><span class="listSymbol" id="selPhmcyVal1">&nbsp;</span></div>
-                    <div class="listText">Amcal Pharmacy<br/>
-                    <span class="listItemSecondRow">320-380 Epsom Rd, Ascot Value</span></div>
+                    <div class="listText" id="selPhmcy1Name">Amcal Pharmacy<br/>
+                    <span class="listItemSecondRow" id="selPhmcy1Address">320-380 Epsom Rd, Ascot Value</span></div>
              </button>
 
              <button class="listButton" id="selPhmcy2">
@@ -260,12 +267,27 @@
                     <span class="listItemSecondRow">189 Union Rd, Ascot Vale</span></div>
              </button>
 
+              <button class="listButton" id="selPhmcy3">
+                    <div><span class="listSymbol" id="selPhmcyVal3">&nbsp;</span></div>
+                    <div class="listText">National Pharmacies<br/>
+                    <span class="listItemSecondRow">218 Union Rd, Ascot Vale</span></div>
+             </button>
+
+              <button class="listButton" id="selPhmcy4">
+                    <div><span class="listSymbol" id="selPhmcyVal4">&nbsp;</span></div>
+                    <div class="listText">Quality Pharmacy Group<br/>
+                    <span class="listItemSecondRow">550 Mt Alexander Rd, Ascot Vale</span>
+                    </div>
+             </button>
+
+
+<!--
              <button class="listButton" id="selPhmcyOther">
                     <div><span class="listSymbol" id="selPhmcyOtherVal">&nbsp;</span></div>
                     <div class="listText">Other Pharmacy<br/>
                     <span class="listItemSecondRow">Search for another pharmacy...</span></div>
              </button>
-
+-->
              <div style="margin-bottom:15px;">
              </div>
          
@@ -511,11 +533,25 @@ src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&am
             // showPage("pageMap");
         });
 
+
+        function clearSelection(id) {
+           $('#' + id).html("&nbsp;");
+        };
+
+        function setSelection(id) {
+            $('#' + id).html(".");
+        };
+
+        function isSelected(id) {
+            return ($('#' + id).text() == ".");
+        }
+
         function changeSelection(id) {
-            if ($('#' + id).text() == ".")
-                $('#' + id).html("&nbsp;");
+            //if ($('#' + id).text() == ".")
+            if (isSelected(id)) 
+                clearSelection(id);
             else
-                $('#' + id).text(".");
+                setSelection(id);
         };
 
 
@@ -526,6 +562,46 @@ src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&am
 
         $("#selDrug2").click(function (event) {
             changeSelection('selDrugVal2');
+        });
+
+        var pharmacyName = " ";
+        var pharmacyAddress = " ";
+
+        function setCurrentPharmacy(id) {
+            setSelection(id);
+            /*
+            pharmacyName = $("#"+id+"name").Text();
+            pharmacyAddress = " ";
+            */
+        };
+
+
+        $("#selPhmcy1").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal1');
+            clearSelection('selPhmcyVal2');
+            clearSelection('selPhmcyVal3');
+            clearSelection('selPhmcyVal4');
+        });
+        
+        $("#selPhmcy2").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal2');
+            clearSelection('selPhmcyVal1');
+            clearSelection('selPhmcyVal3');
+            clearSelection('selPhmcyVal4');
+        });
+
+        $("#selPhmcy3").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal3');
+            clearSelection('selPhmcyVal1');
+            clearSelection('selPhmcyVal2');
+            clearSelection('selPhmcyVal4');
+        });
+
+        $("#selPhmcy4").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal4');
+            clearSelection('selPhmcyVal1');
+            clearSelection('selPhmcyVal2');
+            clearSelection('selPhmcyVal3');
         });
 
         $("#getScriptId").click(function (event) {
