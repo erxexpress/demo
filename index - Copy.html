@@ -1,0 +1,1161 @@
+﻿<!DOCTYPE HTML>
+<html>
+   <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    
+     <title >eRx Express</title>
+     
+     <link rel="stylesheet" href="css/main.css" type="text/css" />
+     <link rel="stylesheet" href="css/jquery-ui.css" />
+
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        
+  </head>
+
+
+  <body onload="pageInit();" class="body">
+
+
+      <!-- ------------------------------------------------- -->
+      <!-- Area used to hide/mask other screen elements      -->
+      <!-- so they can't be accessed                         -->
+      <!-- ------------------------------------------------- -->
+      <div class="maskArea" id="pageMask">
+      </div>
+      
+    <!-- ------------------------------------------------- -->
+    <!-- Login page -->
+    <!-- ------------------------------------------------- -->
+    <div class="popUpArea" id="pageLogin" style=""> 
+
+        <div class="dialogWindow" id="dialogLogin">
+                 
+            <span class="pageTitle">Sign In</span>
+            
+            <span class="dialogText">Username </span>
+            <input type="text" id="loginUsername" value="peter.jones" style="width:160px; position:relative; left:10px; margin-bottom:15px;"  />
+             <br /> 
+            <span class="dialogText">Password</span> 
+            <input type="password" id="loginPassword" value="sdfhsdfsdhfk" style="width:160px;position:relative; left:10px;  margin-bottom:15px;" />
+            <br />
+            <input type="button" id="loginOk" class="dialogButton" value="Ok" />
+            <input type="button" id="loginCancel" class="dialogButton" value="Cancel" />
+        </div>
+
+    </div>
+ 
+    <!-- ------------------------------------------------- -->
+    <!-- Mesagebox -->
+    <!-- ------------------------------------------------- -->
+ <!--
+    <div class="popUpArea" id="pageMessagebox" style=""> 
+
+        <div class="dialogWindow" id="dialogMessagebox">
+                 
+            <span class="pageTitle">Information</span>
+            
+            <span class="dialogText">Username </span>
+            
+            <input type="button" id="Button1" class="dialogButton" value="Ok" />
+        </div>
+
+    </div>
+ -->
+
+
+    <!-- ------------------------------------------------- -->
+    <!-- Progress page -->
+    <!-- ------------------------------------------------- -->
+
+    <div class="popUpArea" id="pageProgress" style=" z-index:20;"> 
+
+        <div class="dialogWindow" id="dialogProgress">
+            <span class="pageTitle">Information</span>
+            <span class="dialogText" style="width:90%; margin-bottom:30px;" id="progressText1">Requesting script details...</span>
+        </div>
+
+    </div>
+
+
+      <!-- ------------------------------------------------- -->
+      <!-- ------------------------------------------------- -->
+      <div id="header" class="header">
+            <img alt="" id="logo" src="images/eRxExpress.jpg" style="cursor: pointer; padding-top:5px;"/>
+            <!--
+            <span class="eRxGreen" style="font-size:32pt;">e</span>
+            <span class="eRxBlue" style="font-size:32pt;">Rx</span>
+            <span class="eRxGreen" style="">></span>
+            <span class="eRxBlue" style="font-style:italic; font-weight:bold;">EXPRESS</span>
+            -->
+            <div style="position:fixed; right:0; top:5px;">
+                <button id="signIn" class="accountButton" style="position:absolute; margin-right:4px;">Sign In</button>
+                <button id="signOut" class="accountButton" style="position:absolute; margin-right:4px; visibility:hidden;">Sign Out</button>
+            </div>
+      </div>
+      
+      <div id="background" class="backgroundImage">
+      </div>
+
+      <!-- ------------------------------------------------------------------ -->
+      <!-- Content  -->
+      <!-- ------------------------------------------------------------------ -->
+
+      <div id="content" class="content">
+          
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+      
+           <div class="contentArea" id="pageHome" style="top:80px;">
+          
+             <span class="pageTitleText" style="font-size:16pt;">
+                 Welcome!
+             </span>
+<!--
+               <script type="text/javascript">
+                   
+                   alert($("#selPhmcy1Name").get().innerHTML);
+                   alert($('#selPhmcy1Name').text());
+               </script>
+               -->
+             
+             <div style="width:70%; margin-left:auto; margin-right:auto; padding-top:30px;">
+             <!--
+                <span style="font-family: Symbols;">
+                abcdefghilmnopqrstuvwxz<br />
+                ABCDEFGHIJKLMNOPQRSTUVXYZ<br />
+                0123456789<br />
+                a,S
+                </span>
+                 -->   
+                    <span class="pageText">
+                     Please scan the QR code and select the drugs that you would would like to request from a pharmacy.
+                 </span>
+                 <br /><br />
+              </div>
+              
+               <div>
+                 <input type="button" id="scanCode" class="actionButton" value="Scan Code"/>
+               </div>
+
+               <br />
+               
+          </div>
+
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+      
+         <div class="contentArea" id="pageDrug">    
+
+             <span class="pageTitle">Select Drugs</span>
+
+             <div style="width:90%; margin:0 auto; margin-bottom:20px;"> 
+                  <span class="pageText" style="font-weight:bold; margin-bottom:30px;">
+                     Prescription for Peter Jones &nbsp;
+                     <!--
+                     <input style="" type="button" id="scriptDetails" class="okButton" value="Show Details" />
+                        -->                     
+                   </span>
+                   <br />
+
+                  <span class="pageText" style="margin-top:20px;">
+                     Please select the drugs script that you would like to request from a pharmacy.
+                  </span>
+               <br />
+             </div>
+
+             <button class="listButton" id="selDrug1">
+                    <div><span class="listSymbol" id="selDrugVal1">.</span></div>
+                    <div class="listText">AMOXYCILLIN CAP 250mg<br/><span class="listItemSecondRow">20 Capsules</span></div>
+             </button>
+
+             <button class="listButton" id="selDrug2">
+                    <div><span class="listSymbol" id="selDrugVal2">.</span></div>
+                    <div class="listText">LIPITOR TAB 10 mg<br/><span class="listItemSecondRow">30 Tablets</span></div>
+             </button>
+
+             <div style="margin-bottom:15px;">
+             </div>
+         
+              <input type="button" id="selDrugOk" class="okButton" value="Continue" />
+              <input type="button" id="selDrugCancel" class="cancelButton" value="Back" />
+
+         </div>
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+
+          <div class="contentArea" id="pagePharmacy">    
+              <span class="pageTitle">Select Pharmacy</span>
+              
+             <div style="width:80%; margin: 0 auto; margin-bottom:20px;"> 
+                  <span class="pageText" style="width:120px;">
+                     Please select the pharmacy where you would like to place your order. 
+                  </span>
+               
+             </div>
+
+
+             <button class="listButton" id="selPhmcy1">
+                    <div><span class="listSymbol" id="selPhmcyVal1">&nbsp;</span></div>
+                    <div class="listText" id="selPhmcy1Name">Amcal Pharmacy<br/>
+                    <span class="listItemSecondRow" id="selPhmcy1Address">320-380 Epsom Rd, Ascot Value</span></div>
+             </button>
+
+             <button class="listButton" id="selPhmcy2">
+                    <div><span class="listSymbol" id="selPhmcyVal2">.</span></div>
+                    <div class="listText">Ascot Vale Pharmacy<br/>
+                    <span class="listItemSecondRow">189 Union Rd, Ascot Vale</span></div>
+             </button>
+
+              <button class="listButton" id="selPhmcy3">
+                    <div><span class="listSymbol" id="selPhmcyVal3">&nbsp;</span></div>
+                    <div class="listText">National Pharmacies<br/>
+                    <span class="listItemSecondRow">218 Union Rd, Ascot Vale</span></div>
+             </button>
+
+              <button class="listButton" id="selPhmcy4">
+                    <div><span class="listSymbol" id="selPhmcyVal4">&nbsp;</span></div>
+                    <div class="listText">Quality Pharmacy Group<br/>
+                    <span class="listItemSecondRow">550 Mt Alexander Rd, Ascot Vale</span>
+                    </div>
+             </button>
+
+
+<!--
+             <button class="listButton" id="selPhmcyOther">
+                    <div><span class="listSymbol" id="selPhmcyOtherVal">&nbsp;</span></div>
+                    <div class="listText">Other Pharmacy<br/>
+                    <span class="listItemSecondRow">Search for another pharmacy...</span></div>
+             </button>
+-->
+             <div style="margin-bottom:15px;">
+             </div>
+         
+
+<!--                  
+                   <li class="ui-widget-content">
+                      <span class="listItemFirstRow">National Pharmacies</span><br />
+                      <span class="listItemSecondRow">218 Union Rd, Ascot Vale<br />
+                          </span>
+                  </li>
+
+                   <li class="ui-widget-content">
+                      <span class="listItemFirstRow">Quality Pharmacy Group</span><br />
+                      <span class="listItemSecondRow">550 Mt Alexander Rd, Ascot Vale<br />
+                      </span>
+                  </li>
+-->
+             <input type="button" id="selPharmacyOk" class="okButton" value="Continue" />
+             <input type="button" id="selPharmacyCancel" class="cancelButton" value="Back" />
+         </div>
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+      
+         <div class="contentArea" id="pageRequest">    
+         
+             <span class="pageTitle">Send Request to Pharmacy</span>
+
+                <div style="width:80%; margin: 0 auto;"> 
+                  <span class="pageText" style="width:120px;">
+                     Please specify a date and time for collecting the drugs from the pharmacy.
+                  </span>
+             </div>
+             <br />
+             
+             <span class="pageTextBold">Your Pickup Date</span> <br />
+             <input type="text" id="requestDate" value="23 May 2013" class="inputControl"/>
+             <br />
+             <span class="pageTextBold">Your Pickup Time</span><br />
+              <input type="text" id="requestTime" value="2:30pm" class="inputControl"/>
+             <br />
+
+             <span class="pageTextBold">Your message to the pharmacy</span><br />
+             <textarea id="requestNotes" style="width:80%; height:60px;" cols="25" rows="4" class="inputControl">I will collect the drugs for my kids as well.
+             </textarea>
+              
+              <br />
+              <input type="button" id="requestOk" class="okButton" value="Send Request" style="width:150px;"/>
+              <input type="button" id="requestCancel" class="cancelButton" value="Back" />
+         </div>
+
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+      
+         <div class="contentArea" id="pageAbout">    
+         
+             <span class="pageTitle">About</span>
+
+                <div style="width:95%; margin: 0 auto; margin-bottom:15px; text-align:left;"> 
+                  <span class="pageText" style="font-size:10pt;">
+                     This is a prototype for a platform-independent mobile phone application to provide functionality around eRx Express.
+                     Transactions with web services are currently only simulated.<br />
+                     <br />
+                     The application was written using HTML5 which can be embedded in packages for all mobile phone platforms (Windows, Android, Apple, Blackberry etc.) using Adobe PhoneGap.
+                     <!--
+                     <br /><br />
+                     For more information please contact Gerold Martens at FRED.
+                     -->
+                     </span>
+             </div>
+              <input type="button" id="aboutClose" class="okButton" value="Back" />
+              
+         </div>
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+
+         <div class="contentArea" id="pageSettings">    
+         
+             <span class="pageTitle">Settings</span>
+
+             <button class="listButton" id="cmdPreferredPharmacy" style="height:70px;">
+                    <div><span class="listSymbol" id="Span1">&nbsp;</span></div>
+                    <div class="listText"><b>Preferred Pharmacy</b><br/>
+                    <span class="listItemSecondRow" style="font-size:10pt;height:30px;">Ascot Vale Pharmacy<br />189 Union Rd</span></div>
+             </button>
+
+
+                <div style="width:95%; margin: 0 auto; margin-bottom:15px;"> 
+                </div>
+             <br />
+             <input type="button" id="settingsClose" class="okButton" value="Back" />
+              
+         </div>
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+
+          <div class="contentArea" id="pageCompleted">    
+         
+             <span class="pageTitle">Confirmation</span>
+
+             <span class="pageText" style="width:120px;">
+                 Your request has been successfully sent to the following pharmacy:<br />
+                 <br />
+                 <b>Ascot Vale Pharmacy</b><br />
+                 67-69 Union Rd<br />
+                 ASCOT VALE VIC 3032 <br />
+               
+                 <br />
+                 <b>Pickup Time:</b><br />
+                  23 May 2013 2:30pm<br />
+                 <br />
+              </span>
+
+
+              <input style="width:200px; margin-bottom:15px;" type="button" id="completedShowMap" class="okButton" value="Show Map" />
+              <input style="width:200px;" type="button" id="completedAddCalender" class="okButton" value="Add To Calendar" />
+              
+<!--              
+              <div style="vertical-align: top; margin:2px;">
+                        <iframe id="pharmacyMap" style="margin:0;" width="350" height="270" " scrolling="no" marginheight="0" marginwidth="0" style="color: black; text-align: right;" 
+                         src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                                                                  
+                        </iframe>
+    src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                    
+
+    src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=5+Little+Bridge+Street,+Bakery+Hill,+Victoria&amp;aq=0&amp;sll=-37.563188,143.861756&amp;sspn=0.00239,0.004823&amp;ie=UTF8&amp;hq=&amp;hnear=5+Little+Bridge+St,+Ballarat+Victoria+3350&amp;z=14&amp;ll=-37.562964,143.860982&amp;output=embed">
+                        <br />
+                        <small><a href="http://maps.google.com.au/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=5+Little+Bridge+Street,+Bakery+Hill,+Victoria&amp;aq=0&amp;sll=-37.563188,143.861756&amp;sspn=0.00239,0.004823&amp;ie=UTF8&amp;hq=&amp;hnear=5+Little+Bridge+St,+Ballarat+Victoria+3350&amp;z=14&amp;ll=-37.562964,143.860982">
+                        View Larger Map</a></small>
+               </div>
+-->
+         </div>
+
+
+         <!-- ------------------------------------------------- -->
+         <!-- ------------------------------------------------- -->
+
+          <div class="contentArea" id="pageMap">    
+         
+             <span class="pageTitle">Pharmacy Location</span>
+
+             <span class="pageText" style=" margin-bottom:20px;">
+                 <b>Ascot Vale Pharmacy</b><br /><br />
+              </span>
+
+              <div style="vertical-align: top; margin:2px;">
+                        <iframe id="pharmacyMap" style="margin:0;color:black;text-align:right; width:95%;" height="270" scrolling="no" 
+                         src="">
+                        </iframe>
+<!--
+    http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed
+
+src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                                                                  
+                        </iframe>
+    src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed">                                                    
+
+    src="http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=5+Little+Bridge+Street,+Bakery+Hill,+Victoria&amp;aq=0&amp;sll=-37.563188,143.861756&amp;sspn=0.00239,0.004823&amp;ie=UTF8&amp;hq=&amp;hnear=5+Little+Bridge+St,+Ballarat+Victoria+3350&amp;z=14&amp;ll=-37.562964,143.860982&amp;output=embed">
+                        <br />
+                        <small><a href="http://maps.google.com.au/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=5+Little+Bridge+Street,+Bakery+Hill,+Victoria&amp;aq=0&amp;sll=-37.563188,143.861756&amp;sspn=0.00239,0.004823&amp;ie=UTF8&amp;hq=&amp;hnear=5+Little+Bridge+St,+Ballarat+Victoria+3350&amp;z=14&amp;ll=-37.562964,143.860982">
+                        View Larger Map</a></small>
+-->
+               </div>
+               
+               <input type="button" id="mapClose" class="okButton" value="Back" />
+<!--
+              <br />
+              Add to Calender<br />
+              Send Email<br />
+              Share
+-->      
+         </div>
+     </div> 
+         
+    <!-- ----------------------------------- --> 
+     <!-- ----------------------------------- --> 
+
+     <div id="footer" class="footer">
+        <div class="optionArea">
+            <button id="optNew" class="optionButton">,</button>
+            <span>New Script</span>
+        </div>
+        <!-- <button id="optHistory" class="optionButton" style="position:relative; left:100px;">History</button> -->
+        
+        <div class="optionArea" style="position:absolute; top:0px; right:88px;">
+            <button id="optAbout" class="optionButton" >d</button>
+            <span>About</span>
+        </div>
+
+        <div class="optionArea" style="position:absolute; top:0px; right:0px;">
+            <button id="optSettings" class="optionButton" >S</button>
+            <span>Settings</span>
+        </div>
+     </div>
+
+      <!-- ----------------------------------- --> 
+      <!-- ----------------------------------- --> 
+    
+    <script type="text/javascript">
+
+
+
+
+        var deviceID = "0283828483";
+
+        var themeId = ""
+        var pid_priceline = "priceline";
+        var pid_twc = "twc";
+        var pid_nova = "nova";
+        var pid_eRx = "eRx";
+
+        var scannedSCID = "";
+        var scriptID = "";
+
+        var tempPage = " ";
+        var currentPage = " ";
+
+        var themeSettings = {};
+        var signedIn = false;
+        var signInFromRequest = false;
+        
+
+        $(document).ready(function () {
+            // alert("Page loaded");
+        });
+
+
+        function initScriptData() {
+
+            scannedSCID = "";
+            scriptID = "";
+        }
+
+
+
+        function loadIframe(iframeName, url) {
+            var $iframe = $('#' + iframeName);
+            if ($iframe.length) {
+                $iframe.attr('src', url);
+                return false;
+            }
+            return true;
+        }
+
+        //ScannedSCID
+        $("#scanCode").click(function (event) {
+            ScanCode();
+            return;
+            // showPage("pagePharmacy");
+
+            loadIframe('pharmacyMap', 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed');
+            // $('#pharmacyMap').attr('src', 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed');
+
+
+            showPage("pageCompleted");
+            // showPage("pageMap");
+        });
+
+
+        function clearSelection(id) {
+           $('#' + id).html("&nbsp;");
+        };
+
+        function setSelection(id) {
+            $('#' + id).html(".");
+        };
+
+        function isSelected(id) {
+            return ($('#' + id).text() == ".");
+        }
+
+        function changeSelection(id) {
+            //if ($('#' + id).text() == ".")
+            if (isSelected(id)) 
+                clearSelection(id);
+            else
+                setSelection(id);
+        };
+
+
+        $("#selDrug1").click(function (event) {
+            changeSelection('selDrugVal1');
+        });        
+        
+
+        $("#selDrug2").click(function (event) {
+            changeSelection('selDrugVal2');
+        });
+
+        var pharmacyName = " ";
+        var pharmacyAddress = " ";
+
+        function setCurrentPharmacy(id) {
+            setSelection(id);
+            /*
+            pharmacyName = $("#"+id+"name").Text();
+            pharmacyAddress = " ";
+            */
+        };
+
+
+        $("#selPhmcy1").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal1');
+            clearSelection('selPhmcyVal2');
+            clearSelection('selPhmcyVal3');
+            clearSelection('selPhmcyVal4');
+        });
+        
+        $("#selPhmcy2").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal2');
+            clearSelection('selPhmcyVal1');
+            clearSelection('selPhmcyVal3');
+            clearSelection('selPhmcyVal4');
+        });
+
+        $("#selPhmcy3").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal3');
+            clearSelection('selPhmcyVal1');
+            clearSelection('selPhmcyVal2');
+            clearSelection('selPhmcyVal4');
+        });
+
+        $("#selPhmcy4").click(function (event) {
+            setCurrentPharmacy('selPhmcyVal4');
+            clearSelection('selPhmcyVal1');
+            clearSelection('selPhmcyVal2');
+            clearSelection('selPhmcyVal3');
+        });
+
+        $("#getScriptId").click(function (event) {
+            GetScriptId();
+        });
+
+        $("#getScriptDetails").click(function (event) {
+            GetScriptDetails();
+        });
+
+
+        function requestScriptData() {
+            var ok;
+            hideDialog("dialogProgress");
+
+            showPage("pageDrug");
+         }
+
+        function ScanCode() {
+
+            initScriptData();
+
+            scannedSCID = "12JVRJ4M5KYJ4DRV71";
+
+            // GetScriptId();
+
+            showDialog("dialogProgress", "Requesting script details...");
+            setTimeout(function () {
+                requestScriptData();
+            }, 2000);
+
+
+            scriptID = "";
+
+            // show scanned SCID, ID
+            /*
+            hideElement("InfoSCID");
+            hideElement("InfoScriptId");
+
+            $("#InfoSCID").text('Script: ' + $('#SCID').val());
+            $("#InfoScriptId").text('Id: ' + $('#ScriptId').val());
+
+            $("#scanCode").text('Id: ' + $('#ScriptId').val());
+            hideElement("scanCode");
+            */
+        }
+
+
+        function GetScriptId() {
+
+            /*
+      async: true,
+   type: "GET",
+   contentType: "application/json; charset=utf-8",
+   url: "../../Services/RunningBarbusService.svc/GetTeamData",
+   dataType: "json",
+   data: '{"teamId":"' + teamId + '", "weekNumber":"' + weekNumber + '"}',
+   success: function (content) {
+       DisplayRun(map, content);
+   }
+        */
+            
+            alert("Get Script Id for " + $('#deviceId').val() + " " + $('#SCID').val());
+
+            $.ajax({
+                type: "GET",
+                async: "false",
+                //url: "http://6082ade8bf5f4339aa46229bed13fa85.cloudapp.net/erxExpressService.svc/RequestScript",
+                // data: '{"deviceId":"' + $('#deviceId').val() + '", "scriptID":"' + $('#SCID').val() + '"}',
+                //data: 'deviceId=' + $('#deviceId').val() + '&scriptID=' + $('#SCID').val(),
+                // url: "http://6082ade8bf5f4339aa46229bed13fa85.cloudapp.net/erxExpressService.svc/RequestScript?deviceId=12345&scriptID=124423",
+                url: "http://6082ade8bf5f4339aa46229bed13fa85.cloudapp.net/erxExpressConsumer/GetScriptData/?deviceId=ryanmoore-lap&QueueId=3",
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                // processData: true,
+                success: function (msg) {
+                    AjaxSucceeded(msg);
+                },
+                error: AjaxFailed
+            });
+
+            alert("done");
+        }
+
+
+        function GetScriptDetails() {
+
+            alert("Get Script Details Id for " + $('#deviceId').val() + " " + $('#ScriptId').val());
+
+            $.ajax({
+                type: "GET",
+                async: "false",
+                url: "http://6082ade8bf5f4339aa46229bed13fa85.cloudapp.net/erxExpressService.svc/GetScriptData",
+                data: '{"DeviceId":"' + $('#deviceId').val() + '", "ScriptID":"' + $('#ScriptId').val() + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    AjaxSucceeded(msg);
+                },
+                error: AjaxFailed
+            });
+
+            alert("done");
+        }
+
+        function AjaxSucceeded(result) {
+            alert(result.d);
+        }
+
+        function AjaxFailed(result) {
+            alert('Failed: ' + result.status + ' ' + result.statusText);
+        }
+
+        // -----------------------------------------
+
+        function initPharmacyMap() {
+
+            return;
+
+            // $('#pharmacyMap',window.parent.document).attr('src', $('#pharmacyMap',window.parent.document).attr('src'));
+            
+            
+            var currSrc = $("#pharmacyMap").attr("src");
+            currSrc = 'http://www.google.com.au';
+
+            // $('#pharmacyMap',window.parent.document).attr('src', currSrc);
+            $('#pharmacyMap').attr('src', currSrc);
+
+            // alert($("#pharmacyMap").attr("src"));
+
+            // $("#pharmacyMap").attr("src", currSrc);
+
+            var iFrame = $('#pharmacyMap');
+            // iFrame.load(currSrc);
+
+            // alert('1');
+/*
+            $('#pharmacyMap').attr('src', '');
+            var lcMap
+            lcMap = 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed';
+            lcMap = "http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed";
+            // $('#pharmacyMap').attr('src', lcMap);
+            // $('#pharmacyMap').attr('src', 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed');
+            */
+            /*
+            $(function(){
+                $('#trns').attr('transform', 'rotate(60,50,50)');
+            });
+            */
+
+            // 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed
+        }
+
+
+        
+        
+
+        function EnableDialog() {
+            $('#pageMask').css('visibility', 'visible');
+            $('.popUpArea').css('visibility', 'visible');
+        }
+
+        function DisableDialog() {
+            $('#pageMask').css('visibility', 'hidden');
+            $('.popUpArea').css('visibility', 'hidden');
+        }
+
+
+        function pageInit() {
+            // TO DO: use phone number 
+            deviceID = "2393832049842";
+            currentPage = "test";
+
+            setTheme(pid_eRx);
+            // setTheme(pid_priceline);
+
+            // homePage();
+            newScript();
+            // showPage("pageDrug");
+        }
+
+        function hide_container(id) {
+
+            $('#'+id).css('visibility', 'hidden');
+            return;
+
+                $("#" + id).fadeTo(100, 0);
+                $("#" + id).hide();
+                // $('#pageDrug').css('visibility', 'visible');
+            }
+
+            function show_container(id) {
+
+              $("#" + id).css('visibility', 'visible');
+               return;
+
+                $("#" + id).show();
+                $("#" + id).fadeTo(200, 1);
+            
+            }
+
+            function hideElement(id) {
+                $("#" + id).css('visibility', 'hidden');
+            }
+
+            function showElement(id) {
+                $("#" + id).css('visibility', 'visible');
+            }
+
+            // --------------------------------
+                
+            $("#logo").click(function () {
+                // homePage();    
+
+                // alert(themeId);
+
+                switch (themeId)
+                {
+                    case pid_eRx:
+                        setTheme(pid_priceline);
+                        break;
+
+                    case pid_priceline:
+                        setTheme(pid_twc);
+                        break;
+
+                    case pid_twc:
+                        setTheme(pid_nova);
+                        break;
+                    
+                    default:
+                        setTheme(pid_eRx);
+                        break;
+                }
+            });
+        
+
+            // --------------------------------------------------
+
+            function hideDialog(id) {
+                DisableDialog();
+                hideElement(id);
+            }
+
+            function showDialog(id, title) {
+                if (title.length > 0) {
+                    $("#progressText1").text(title);
+                    // $("#progressText1").html(title);
+                }
+
+                EnableDialog();
+                show_container(id);
+            }
+
+            function processSignIn() {
+                var ok;
+                hideDialog("dialogProgress");
+            }
+
+            function doSignIn() {
+    
+                showDialog("dialogProgress", "Signing-in...");
+                setTimeout(function () {
+                    processSignIn(); 
+                }, 2000);
+            }
+
+
+            function processAddToCalendar() {
+                var ok;
+                hideDialog("dialogProgress");
+            }
+
+            function doAddToCalender() {
+
+                showDialog("dialogProgress", "Adding appointment to calender...");
+                setTimeout(function () {
+                    processAddToCalendar();
+                }, 2000);
+            }
+
+
+            $("#signIn").click(function () {
+                showDialog("dialogLogin", "");
+            });
+
+            $("#signOut").click(function () {
+                signedIn = false;
+                hideElement("signOut");
+                showElement("signIn");
+            });
+
+
+            
+            $("#loginCancel").click(function () {
+                hideDialog("dialogLogin");
+                signInFromRequest = false;
+            });
+
+            $("#loginOk").click(function () {
+
+                // validate
+                doSignIn();
+                signedIn = true;
+
+                // update button
+                hideElement("signIn");
+                showElement("signOut");
+
+                hideDialog("dialogLogin");
+
+                if (signInFromRequest) {
+                    signInFromRequest = false;
+                    doSendRequest();
+                }
+            });
+
+
+            $("#settingsOk").click(function () {
+
+                // update app...
+
+                // hideDialog("dialogLogin");
+            });
+
+
+            function homePage() {
+
+                showPage("pageHome");
+            }
+
+            function showPage(id) {
+
+                if (currentPage.length > 0)
+                  hide_container(currentPage);
+
+                currentPage = id;
+                show_container(id);
+            }
+
+
+            function newScript() {
+
+                initScriptData();
+                homePage();
+            }
+
+            
+
+        // ----------------------------------------------------
+
+            $("#optNew").click(function () {
+                newScript();
+            });
+
+
+            $("#optAbout").click(function () {
+                if ($('#pageAbout').css('visibility') == "hidden") {
+                    tempPage = currentPage;
+                    showPage("pageAbout");
+                }
+            });
+
+            $("#aboutClose").click(function () {
+                showPage(tempPage);
+            });
+
+
+            $("#optSettings").click(function () {
+                if ($('#pageSettings').css('visibility') == "hidden") {
+                    tempPage = currentPage;
+                    showPage("pageSettings");
+                }
+            });
+
+
+            $("#settingsClose").click(function () {
+                showPage(tempPage);
+            });
+
+
+
+            $("#selectDrug").click(function () {
+                ShowDrugs();
+            });
+
+            $("#selDrugHome").click(function () {
+                homePage();
+            });
+
+            $("#selDrugOk").click(function () {
+                showPage("pagePharmacy");
+            });
+        
+            $("#selDrugCancel").click(function () {
+                homePage();
+            });
+
+            function ShowDrugs() {
+                showPage("pageDrug");
+            }
+        
+            $("#selPharmacyOk").click(function () {
+                showPage("pageRequest");
+            });
+
+            $("#selPharmacyCancel").click(function () {
+                showPage("pageDrug");
+            });
+
+            function doPageCompleted() {
+                initPharmacyMap();
+                showPage("pageCompleted");
+            }
+
+            function sendRequestToPharmacy() {
+                var ok;
+
+                hideDialog("dialogProgress");
+                doPageCompleted()
+            }
+
+            $("#completedShowMap").click(function () {
+                showPage("pageMap");
+            });
+
+
+            $("#completedAddCalender").click(function () {
+                doAddToCalender();
+            });
+
+
+            $("#mapClose").click(function () {
+                showPage("pageCompleted");
+            });
+
+
+            function doSendRequest() {
+
+                showDialog("dialogProgress", "Sending request...");
+                setTimeout(function () {
+                    sendRequestToPharmacy();
+                }, 2000);
+            }
+
+            $("#requestOk").click(function () {
+
+                if (!signedIn) {
+                    signInFromRequest = true;
+                    showDialog("dialogLogin", "");
+                }
+                else {
+                    doSendRequest();
+                }
+            });
+        
+            $("#requestCancel").click(function () {
+                showPage("pagePharmacy");
+            });
+        
+            $("#completedOk").click(function () {
+                homePage();
+            });
+
+
+            $("#settingsOk").click(function () {
+                
+            });
+
+            
+
+
+
+
+            function setOpacity(id, value) {
+
+                return;
+
+                $('#' + id).css('opacity', 'value/10');
+                $('#' + id).css('filter', alpha(opacity = value));
+
+                // opacity: value/10;   // 0.5
+                // filter:alpha(opacity=value); /* For IE8 and earlier */
+            }
+
+
+            function setTheme(id) {
+
+                themeId = id;
+
+                switch (id) {
+                    case pid_priceline:
+                        {
+                            $('#homeTopAd').css('visibility', "visible");
+                            // $('#homeTopImage').attr('src', 'url(images/priceline-logo.jpg)');
+                            $('#banner').attr('src', 'url(images/priceline-logo.jpg)');
+                            $('#background').css('background-image', 'url(images/priceline-logo.jpg)');
+                            $('#background').css('background-position', 'bottom');
+                            //$('#background').css('padding-top', '100%');
+                            setOpacity('background', 30);
+
+                            $('.actionButton').css('background-color', 'white');
+                            $('.actionButton').css('color', 'red');
+
+                            $('.okButton').css('background-color', 'white');
+                            $('.okButton').css('color', 'red');
+
+                            $('.cancelButton').css('background-color', 'white');
+                            $('.cancelButton').css('color', 'red');
+
+                            break;
+                        }
+
+
+                    case pid_nova:
+                        {
+                            $('#homeTopAd').css('visibility', "hidden");
+
+                            $('#background').css('background-image', 'url(images/nova_logo.png)');
+                            // $('#background').css('background-image', 'url()');
+                            $('#background').css('background-position', 'bottom');
+                            // $('#background').css('background-color', '#D81A62');
+                            // $('#background').css('color', 'white');
+                            setOpacity('backgroundImage', 80);
+
+                            //$('#background').css('padding-top', '100%');
+
+
+                            $('.actionButton').css('background-color', '#D81A62');
+                            $('.actionButton').css('color', 'white');
+
+                            $('.okButton').css('background-color', '#D81A62');
+                            $('.okButton').css('color', 'white');
+
+                            $('.cancelButton').css('background-color', '#D81A62');
+                            $('.cancelButton').css('color', 'white');
+
+                            break;
+                        }
+
+                    case pid_twc:
+                        {
+                            $('#homeTopAd').css('visibility', "hidden");
+
+                            $('#background').css('background-image', 'url(images/TWC.jpg)');
+                            $('#background').css('background-position', 'bottom');
+                            // $('#background').css('padding-top', '100%');
+                            setOpacity('background', 30);
+
+                            $('.actionButton').css('background-color', '#8C93C7');
+                            $('.actionButton').css('color', 'white');
+
+                            $('.okButton').css('background-color', '#8C93C7');
+                            $('.okButton').css('color', 'white');
+
+                            $('.cancelButton').css('background-color', '#8C93C7');
+                            $('.cancelButton').css('color', 'white');
+
+                            break;
+                        }
+
+                    case pid_eRx:
+                        {
+                            $('#homeTopAd').css('visibility', "visible");
+                            // $('#homeTopImage').attr('src', 'url(images/priceline-logo.jpg)');
+
+                            $('#banner').attr('src', 'url()');
+                            $('#background').css('background-image', 'url()');
+                            $('#background').css('background-position', 'bottom');
+                            //$('#background').css('padding-top', '100%');
+                            setOpacity('background', 30);
+
+                            $('.actionButton').css('background-color', 'white');
+                            $('.actionButton').css('color', 'black');
+
+                            $('.okButton').css('background-color', 'white');
+                            $('.okButton').css('color', 'black');
+
+                            $('.cancelButton').css('background-color', 'white');
+                            $('.cancelButton').css('color', 'black');
+                            break;
+                        }
+
+                    default:
+
+                        break;
+                        // 
+                }
+
+                // $('#signIn').css('visibility', 'hidden');
+                // $('#footer').css('visibility', 'hidden');
+            }
+
+
+        
+    </script>
+
+  </body>
+</html>
