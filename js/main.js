@@ -22,6 +22,9 @@ var themeSettings = {};
 var signedIn = false;
 var signInFromRequest = false;
 
+var pharmacyName = " ";
+var pharmacyAddress = " ";
+
 
 $(document).ready(function () {
     // alert("Page loaded");
@@ -90,8 +93,7 @@ $("#selDrug2").click(function (event) {
     changeSelection('selDrugVal2');
 });
 
-var pharmacyName = " ";
-var pharmacyAddress = " ";
+
 
 function setCurrentPharmacy(id) {
     setSelection(id);
