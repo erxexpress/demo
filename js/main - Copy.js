@@ -48,6 +48,89 @@ function loadIframe(iframeName, url) {
     return true;
 }
 
+//ScannedSCID
+$("#scanCode").click(function (event) {
+    ScanCode();
+
+    return;
+    // showPage("pagePharmacy");
+
+    loadIframe('pharmacyMap', 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed');
+    // $('#pharmacyMap').attr('src', 'http://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=67-69 Union Rd, ASCOT VALE VIC 3032,Victoria&amp;aq=0&amp;&amp;ie=UTF8&amp;hq=&amp;hnear=67-69 Union Rd, ASCOT VALE VIC 3032&amp;z=14&amp;&amp;output=embed');
+
+
+    showPage("pageCompleted");
+    // showPage("pageMap");
+});
+
+
+/*
+function clearSelection(id) {
+    $('#' + id).html("&nbsp;");
+};
+
+function setSelection(id) {
+    $('#' + id).html(".");
+};
+
+function isSelected(id) {
+    return ($('#' + id).text() == ".");
+}
+
+function changeSelection(id) {
+    //if ($('#' + id).text() == ".")
+    if (isSelected(id))
+        clearSelection(id);
+    else
+        setSelection(id);
+};
+*/
+
+$("#selDrug1").click(function (event) {
+    changeSelection('selDrugVal1');
+});
+
+
+$("#selDrug2").click(function (event) {
+    changeSelection('selDrugVal2');
+});
+
+
+function setCurrentPharmacy(id) {
+    setSelection(id);
+    /*
+    pharmacyName = $("#"+id+"name").Text();
+    pharmacyAddress = " ";
+    */
+};
+
+$("#selPhmcy1").click(function (event) {
+    setCurrentPharmacy('selPhmcyVal1');
+    clearSelection('selPhmcyVal2');
+    clearSelection('selPhmcyVal3');
+    clearSelection('selPhmcyVal4');
+});
+
+$("#selPhmcy2").click(function (event) {
+    setCurrentPharmacy('selPhmcyVal2');
+    clearSelection('selPhmcyVal1');
+    clearSelection('selPhmcyVal3');
+    clearSelection('selPhmcyVal4');
+});
+
+$("#selPhmcy3").click(function (event) {
+    setCurrentPharmacy('selPhmcyVal3');
+    clearSelection('selPhmcyVal1');
+    clearSelection('selPhmcyVal2');
+    clearSelection('selPhmcyVal4');
+});
+
+$("#selPhmcy4").click(function (event) {
+    setCurrentPharmacy('selPhmcyVal4');
+    clearSelection('selPhmcyVal1');
+    clearSelection('selPhmcyVal2');
+    clearSelection('selPhmcyVal3');
+});
 
 $("#getScriptId").click(function (event) {
     GetScriptId();
